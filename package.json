@@ -19,6 +19,6 @@
   "homepage": "https://github.com/rayc2045/ghibli-crawler#readme",
   "dependencies": {
     "puppeteer-core": "^7.1.0",
-    "request": "^2.88.2"
+    "axios": "^0.21.1"
   }
 }
