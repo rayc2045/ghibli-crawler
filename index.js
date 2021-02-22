@@ -11,7 +11,8 @@ const request = require('request');
       // 'disable-setuid-sandbox',
       '--window-size=800,800'
     ],
-    headless: false // Open browser
+    headless: false, // Open browser
+    slowMo: 100
   });
 
   const page = await browser.newPage();
