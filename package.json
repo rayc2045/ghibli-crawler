@@ -1,0 +1,24 @@
+{
+  "name": "ghibli-crawler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://rayc2045@github.com/rayc2045/ghibli-crawler.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rayc2045/ghibli-crawler/issues"
+  },
+  "homepage": "https://github.com/rayc2045/ghibli-crawler#readme",
+  "dependencies": {
+    "puppeteer-core": "^7.1.0",
+    "request": "^2.88.2"
+  }
+}
