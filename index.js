@@ -42,7 +42,7 @@ const axios = require('axios');
 
     while (viewportIncr + viewportHeight < height) {
       await page.evaluate(_viewportHeight => {
-        window.scrollBy(0, _viewportHeight)
+        window.scrollBy(0, _viewportHeight);
       }, viewportHeight);
       await wait(0.02);
       viewportIncr += viewportHeight;
@@ -72,7 +72,7 @@ const axios = require('axios');
       // }
       const split = src.split('/');
       const imageName = split[split.length - 1]; // redturtle001.jpg
-      
+
       downloadImage(src, `./img/${folderName}/${imageName}`, () => {
         console.log(`Download "${folderName}" ${imageName}`);
       });
@@ -98,11 +98,11 @@ async function downloadImage(url, path, callback) {
     methods: 'GET',
     responseType: 'stream'
   });
-  
+
   response.data.pipe(writer);
 
   return new Promise((resolve, reject) => {
     writer.on('finish', resolve);
     writer.on('error', reject);
-  })
+  });
 }
