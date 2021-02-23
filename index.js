@@ -3,6 +3,8 @@ const fs = require('fs');
 const axios = require('axios');
 
 (async () => {
+  console.log('it might take some time, please be patient.');
+
   const browser = await puppeteer.launch({
     executablePath: '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser',
     args: [
@@ -13,7 +15,7 @@ const axios = require('axios');
     ],
     // headless: false, // Open browser
     // devtools: true,
-    slowMo: 1000, // Prevent error: getaddrinfo ENOTFOUND www.ghibli.jp
+    slowMo: 1200, // Prevent error: getaddrinfo ENOTFOUND www.ghibli.jp
   });
 
   const page = await browser.newPage();
@@ -23,7 +25,6 @@ const axios = require('axios');
   });
 
   const buttons = await page.$$('.catalog a');
-  console.log('it may take some time, please be patient.');
 
   for (const button of buttons) {
     await button.click();
