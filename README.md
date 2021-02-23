@@ -10,9 +10,9 @@
 Eventually all photos will be saved in the "img" folder.
 ### Dev Log
 
-最近對爬蟲感到興趣，幾天的研究發現 [Puppeteer](https://github.com/puppeteer/puppeteer) 這套由 Google 開源、使用無介面操作 Chrome 做自動化測試的 Node.js 函式庫也能用來爬取資料，因此決定使用 Node.js 搭配 Puppeteer 和 [Axios](https://github.com/axios/axios) (基於 promise 的 HTTP 庫)，自動化將先前作品[「吉卜力相簿」](https://rayc2045.github.io/ghibli-gallery/) 上所有的作品劇照下載下來。
+最近對爬蟲感到興趣，幾天的研究發現 [Puppeteer](https://github.com/puppeteer/puppeteer) 這套由 Google 開源、使用無介面操作 Chrome 做自動化測試的 Node.js 函式庫也能用來爬取資料，因此決定使用 Node.js 搭配 Puppeteer 和 [Axios](https://github.com/axios/axios) (基於 promise 的 HTTP 庫)，自動化將先前作品[「吉卜力相簿」](https://rayc2045.github.io/ghibli-gallery/) 上的一千多張作品劇照下載下來。
 
-Puppeteer 可由 npm 進行安裝，如果電腦中有基於 Chromium 的瀏覽器，可下載容量較小的核心版本，之後再將 Puppeteer 的啟動路徑設置為應用程式路徑即可 (範例使用 Brave 瀏覽器)：
+Puppeteer 可由 npm 進行安裝，如果電腦中有基於 Chromium 的瀏覽器，可下載容量較小的核心版本，之後再將啟動路徑設置為應用程式路徑即可 (範例使用 Brave 瀏覽器)：
 
     $ npm i puppeteer-core
 
