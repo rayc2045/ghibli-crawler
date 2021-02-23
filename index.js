@@ -13,7 +13,7 @@ const axios = require('axios');
     ],
     // headless: false, // Open browser
     // devtools: true,
-    slowMo: 800, // Prevent trig error: getaddrinfo ENOTFOUND www.ghibli.jp
+    slowMo: 1000, // Prevent error: getaddrinfo ENOTFOUND www.ghibli.jp
   });
 
   const page = await browser.newPage();
@@ -23,10 +23,11 @@ const axios = require('axios');
   });
 
   const buttons = await page.$$('.catalog a');
+  console.log('it may take some time, please be patient.');
 
   for (const button of buttons) {
     await button.click();
-    await wait(2);
+    await page.waitForSelector('section img');
 
     const folderName = await page.evaluate(() =>
       document.querySelector('#title').textContent.trim());
@@ -53,7 +54,7 @@ const axios = require('axios');
   await browser.close();
 })();
 
-function wait(sec) {
+function waitSeconds(sec) {
   return new Promise(resolve => setTimeout(() => resolve()), sec * 1000);
 }
 
