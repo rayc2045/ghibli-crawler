@@ -5,8 +5,9 @@
     $ git clone https://github.com/rayc2045/ghibli-crawler
     $ cd ghibli-crawler
     $ npm install
-    $ node index.js // Eventually all photos will be saved in the "img" folder
+    $ node index.js
 
+Eventually all photos will be saved in the "img" folder.
 ### Dev Log
 
 最近對爬蟲感到興趣，幾天的研究發現 [Puppeteer](https://github.com/puppeteer/puppeteer) 這套由 Google 開源、使用無介面操作 Chrome 做自動化測試的 Node.js 函式庫也能用來爬取資料，因此決定使用 Node.js 搭配 Puppeteer 和 [Axios](https://github.com/axios/axios) (基於 promise 的 HTTP 庫)，自動化將先前作品[「吉卜力相簿」](https://rayc2045.github.io/ghibli-gallery/) 上所有的作品劇照下載下來。
@@ -69,13 +70,11 @@ await page.waitForFunction(() =>
     el.textContent.includes('Assets Folder'))); // 等待功能完成
 ```
 
-在這次實作中遇到最大的問題是在大量下載圖片時，Node 端遇到的錯誤：
+在這次實作中遇到最大的問題是在大量下載圖片時，Node 端遇到的錯誤，原因由短時間內發出過多請求導致圖片下載失敗，透過加上 slowMo 參數，將自動化操作的速度減慢得以解決：
 
     (node:15319) UnhandledPromiseRejectionWarning: Error: getaddrinfo ENOTFOUND www.ghibli.jp
         at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:67:26)
     (Use `node --trace-warnings ...` to show where the warning was created)
-
-原因由短時間內發出過多請求導致圖片下載失敗，透過加上 slowMo 參數，將自動化操作的速度減慢得以解決：
 
 ```js
 const browser = await puppeteer.launch({
