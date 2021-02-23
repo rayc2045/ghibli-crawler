@@ -7,12 +7,16 @@ const axios = require('axios');
 
   const browser = await puppeteer.launch({
     executablePath: '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser',
+    ignoreDefaultArgs: [
+      '--enable-automation', // 不顯示 "自動化測試工具控制中"
+    ],
     args: [
       '--incognito', // 無痕模式
       '--window-size=800,800',
       // '--no-sandbox',
       // '--disable-setuid-sandbox'
     ],
+    // userDataDir: './userData', // 藉由讀取檔案快速登入用 module.export = { account: '', password: '' }
     // headless: false, // Open browser
     // devtools: true,
     slowMo: 1200 // Prevent error: getaddrinfo ENOTFOUND www.ghibli.jp
