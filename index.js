@@ -81,3 +81,8 @@ async function downloadImage(url, path, callback) {
     writer.on('error', reject);
   });
 }
+
+async function screenshot(page, targetClassName, filename) {
+  const target = await page.$(targetClassName);
+  await target.screenshot({ path: `./img/${filename}` }); // './img/example.png'
+}
