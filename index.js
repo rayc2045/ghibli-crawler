@@ -3,7 +3,7 @@ const fs = require('fs');
 const axios = require('axios');
 
 (async () => {
-  console.log('Connecting...');
+  console.log('Connecting...\nIt might take some time.');
 
   const browser = await puppeteer.launch({
     executablePath: '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser',
@@ -15,7 +15,7 @@ const axios = require('axios');
     ],
     // headless: false, // Open browser
     // devtools: true,
-    slowMo: 1200, // Prevent error: getaddrinfo ENOTFOUND www.ghibli.jp (https://www.google.com/search?ei=0J40YKLgFPLRmAXarargBw&q=axios+UnhandledPromiseRejectionWarning%3A+Error%3A+getaddrinfo+ENOTFOUND+at+GetAddrInfoReqWrap.onlookup+%5Bas+oncomplete%5D+%28dns.js%3A67%3A26%29&oq=axios+UnhandledPromiseRejectionWarning%3A+Error%3A+getaddrinfo+ENOTFOUND+at+GetAddrInfoReqWrap.onlookup+%5Bas+oncomplete%5D+%28dns.js%3A67%3A26%29&gs_lcp=Cgdnd3Mtd2l6EANQ3Q5YhhVg_RVoAHAAeACAAQCIAQCSAQCYAQKgAQGqAQdnd3Mtd2l6wAEB&sclient=gws-wiz&ved=0ahUKEwiiiLrirv_uAhXyKKYKHdqWCnwQ4dUDCA0&uact=5)
+    slowMo: 1200 // Prevent error: getaddrinfo ENOTFOUND www.ghibli.jp
   });
 
   const page = await browser.newPage();
@@ -23,6 +23,8 @@ const axios = require('axios');
   await page.goto('https://rayc2045.github.io/ghibli-gallery/', {
     waitUntil: 'domcontentloaded'
   });
+
+  console.log('Start downloading...');
 
   const buttons = await page.$$('.catalog a');
 
@@ -41,7 +43,6 @@ const axios = require('axios');
 
     createFolder('./img');
     createFolder(`./img/${folderName}`);
-    console.log('Start downloading...');
 
     imageLinks.forEach(url => {
       const split = url.split('/');
