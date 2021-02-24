@@ -12,11 +12,12 @@ const axios = require('axios');
     ],
     args: [
       '--incognito', // 無痕模式
-      '--window-size=800,800',
+      '--window-size=1920,1080',
       // '--no-sandbox',
       // '--disable-setuid-sandbox'
     ],
-    // userDataDir: './userData', // 藉由讀取檔案快速登入用 module.export = { account: '', password: '' }
+    // userDataDir: './userData', // 藉由讀取檔案快速登入用 module.exports = { account: '', password: '' }
+    defaultViewport: null,
     // headless: false, // Open browser
     // devtools: true,
     slowMo: 1200 // Prevent error: getaddrinfo ENOTFOUND www.ghibli.jp
