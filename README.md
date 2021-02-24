@@ -26,10 +26,14 @@ const puppeteer = require('puppeteer-core');
 })();
 ```
 
-Puppeteer 的語法並不難，在[官方文件](https://pptr.dev/)中可找到許多範例；而其中因為大多自動化操作屬於非同步行為，需要另外使用 async/await 語法確保程式依序執行，算是比較需要注意的部分，較常用到的 API 有：
+Puppeteer 的語法並不難，在[官方文件](https://pptr.dev/)中可找到許多範例；而其中因為大多自動化操作屬於非同步行為，需要另外使用 async/await 語法確保程式依序執行，算是比較需要注意的部分，較常用到的指令有：
 
 ```js
 const page = await browser.newPage();
+
+const cookies = await page.cookies([...urls]); // 獲取此頁 cookies
+await page.setCookie(cookieObject1, cookieObject2); // 設定 cookie
+await page.setUserAgent(userAgent); // 設定 userAgent
 
 const navbar = await page.$('.nav'); // 抓取單一元素
 const links = await page.$$('a'); // 抓取複數元素
@@ -43,7 +47,7 @@ const imageLinks = await page.evaluate(() =>
 await page.type('#email', 'example@gmail.com'); // 輸入
 await page.click('.loginBtn'); // 點擊
 
-// 特定元素截圖
+// 單一元素截圖
 const target = await page.$('img');
 await target.screenshot({ path: `./img/example.png` });
 
@@ -56,6 +60,9 @@ await page.screenshot({
 });
 
 const url = await page.url(); // 當前網址
+await page.reload(); // 重整頁面
+await page.goBack(); // 上一頁
+await page.goForward(); // 下一頁
 
 await page.waitForNavigation(); // 等待頁面跳轉
 await page.waitForSelector('.navSubmenu'); // 等待當前頁面 AJAX 元素
@@ -81,6 +88,6 @@ const browser = await puppeteer.launch({
 });
 ```
 
-完成初次爬蟲和自動化程序的過程中小有成就感，如果未來有需求，也許還會使用類似的方式做網頁轉 PDF、自動化登入操作，又或是爬完資料後結合寄信功能做 Email 通知。
+完成初次爬蟲和自動化程序的過程中小有成就感，如果未來有需求，也許還會使用類似的方式做網頁轉 PDF、自動化登入操作，又或是定時爬完資料後結合寄信功能做 Email 通知吧！
 
 文章同步刊載於 [Medium](https://medium.com/@raychangdesign)。
