@@ -75,7 +75,7 @@ await page.waitForFunction(() =>
     el.textContent.includes('Assets Folder'))); // 等待功能完成
 ```
 
-在這次實作中遇到最大的問題是在大量下載圖片時，Node 端遇到的錯誤，原因由短時間內發出過多請求導致圖片下載失敗，透過加上 slowMo 參數，將自動化操作的速度減慢得以解決：
+這次實作中遇到最大的問題是在大量下載圖片時，Node 端遇到的錯誤，原因由短時間內發出過多請求導致圖片下載失敗，透過加上 slowMo 參數，將自動化操作的速度減慢得以解決：
 
     (node:15319) UnhandledPromiseRejectionWarning: Error: getaddrinfo ENOTFOUND www.ghibli.jp
         at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:67:26)
