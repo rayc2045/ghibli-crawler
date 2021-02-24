@@ -1,5 +1,5 @@
 [![Photo](https://raw.githubusercontent.com/rayc2045/ghibli-crawler/main/puppeteer.png)](https://dribbble.com/raychangdesign)
-# Ghibli Crawler - Automatically download 1,178 studio Ghibli's work photo at once
+# Ghibli Crawler - Automatically download 1,178 studio Ghibli's work photos
 ### Usage
 
     $ git clone https://github.com/rayc2045/ghibli-crawler
