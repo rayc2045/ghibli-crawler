@@ -1,5 +1,7 @@
-[![Photo](https://cdn.dribbble.com/users/3800131/screenshots/15181368/media/316370a617a3bdbeae903d711da448b4.png)](https://dribbble.com/raychangdesign)
 # Ghibli Crawler - Automatically download 1,178 studio Ghibli's work photos
+
+[![Photo](https://cdn.dribbble.com/users/3800131/screenshots/15188916/media/a8f595ba01dd40e9c9fcaf253c09c11f.png)](https://dribbble.com/raychangdesign)
+
 ### Usage
 
     $ git clone https://github.com/rayc2045/ghibli-crawler
@@ -7,7 +9,12 @@
     $ npm install
     $ node index.js
 
-Eventually all photos will be saved in the "img" folder. (321.9 MB)
+If you don't use [Brave browser](https://brave.com/), remember to change the `executablePath` in index.js to your Chromium browser file path (or replace the npm package "puppeteer-core" with "puppeteer" and remove the `executablePath` in index.js). 
+
+After running `node index.js`, all photos will be saved in the "img" folder. (321.9 MB)
+
+[![Photo](https://cdn.dribbble.com/users/3800131/screenshots/15188869/media/823b8d9b8055e21c18408aca4342ae60.png)](https://dribbble.com/raychangdesign)
+
 ### Dev Log
 
 最近對爬蟲感到興趣，幾天的研究發現 [Puppeteer](https://github.com/puppeteer/puppeteer) 這套由 Google 開源、使用無介面操作 Chrome 做自動化測試的 Node.js 函式庫也能用來爬取資料，因此決定使用 Node.js 搭配 Puppeteer 和 [Axios](https://github.com/axios/axios) (基於 promise 的 HTTP 庫)，自動化將先前作品[「吉卜力相簿」](https://rayc2045.github.io/ghibli-gallery/) 上的一千多張作品劇照下載下來。
