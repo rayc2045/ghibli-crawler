@@ -9,14 +9,14 @@ Automatically download 1,178 studio Ghibli's work photos
 
 ### Usage
 
-Install [Node](https://nodejs.org/) and [Git](https://git-scm.com/), then:
+Install [Git](https://git-scm.com/) and [Node](https://nodejs.org/), then:
 
     $ git clone https://github.com/rayc2045/ghibli-crawler
     $ cd ghibli-crawler
     $ npm install
     $ node index.js
 
-If you don't use [Brave browser](https://brave.com/), remember to change the `executablePath` in index.js to your Chromium browser file path (or replace the npm package "puppeteer-core" with "puppeteer" and remove the `executablePath` in index.js). 
+If you don't use [Brave browser](https://brave.com/), remember to change the `executablePath` in index.js to your Chromium browser file path (or directly replace the npm package "puppeteer-core" with "puppeteer" and remove the `executablePath` in index.js). 
 
 Awhile after running `node index.js`, all photos will be saved in the "img" folder. (321.9 MB)
 
@@ -56,7 +56,7 @@ const title = await page.evaluate(() =>
   document.querySelector('#title').textContent.trim()); // 取得 title
 
 const imageLinks = await page.evaluate(() =>
-  [...document.querySelectorAll('img')].map(img => img.src));  // 取得圖片網址
+  [...document.querySelectorAll('img')].map(img => img.src)); // 取得圖片網址
 
 await page.type('#email', 'example@gmail.com'); // 輸入
 await page.click('.loginBtn'); // 點擊
@@ -89,7 +89,7 @@ await page.waitForFunction(() =>
     el.textContent.includes('Assets Folder'))); // 等待功能完成
 ```
 
-這次實作中遇到最大的問題是在大量下載圖片時，Node 端遇到的錯誤，原因由短時間內發出過多請求導致圖片下載失敗，透過加上 slowMo 參數，將自動化操作的速度減慢得以解決：
+這次實作中遇到最大的問題是在大量下載圖片時，Node 端遇到的錯誤，原因由短時間內發出過多請求導致圖片下載失敗，透過加上 `slowMo` 參數，將自動化操作的速度減慢得以解決：
 
     (node:15319) UnhandledPromiseRejectionWarning: Error: getaddrinfo ENOTFOUND www.ghibli.jp
         at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:67:26)
