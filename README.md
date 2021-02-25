@@ -9,6 +9,8 @@ Automatically download 1,178 studio Ghibli's work photos
 
 ### Usage
 
+Install [Node](https://nodejs.org/) and [Git](https://git-scm.com/), then:
+
     $ git clone https://github.com/rayc2045/ghibli-crawler
     $ cd ghibli-crawler
     $ npm install
@@ -16,7 +18,7 @@ Automatically download 1,178 studio Ghibli's work photos
 
 If you don't use [Brave browser](https://brave.com/), remember to change the `executablePath` in index.js to your Chromium browser file path (or replace the npm package "puppeteer-core" with "puppeteer" and remove the `executablePath` in index.js). 
 
-After running `node index.js`, all photos will be saved in the "img" folder. (321.9 MB)
+Awhile after running `node index.js`, all photos will be saved in the "img" folder. (321.9 MB)
 
 [![Photo](https://cdn.dribbble.com/users/3800131/screenshots/15188869/media/823b8d9b8055e21c18408aca4342ae60.png)](https://dribbble.com/raychangdesign)
 
