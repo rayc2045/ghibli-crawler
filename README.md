@@ -22,7 +22,7 @@ If you don't use [Brave browser](https://brave.com/), remember to change the `ex
 
 ```js
 // index.js
-const puppeteer = require('puppeteer'); // Replace "puppeteer-core" with "puppeteer"
+const puppeteer = require('puppeteer-core'); // Replace "puppeteer-core" with "puppeteer"
 
 (async () => {
   const browser = await puppeteer.launch({
