@@ -16,9 +16,20 @@ Install [Git](https://git-scm.com/) and [Node](https://nodejs.org/), then:
     $ npm install
     $ node index.js
 
-If you don't use [Brave browser](https://brave.com/), remember to change the `executablePath` in index.js to your Chromium browser file path (or directly replace the npm package "puppeteer-core" with "puppeteer" and remove the `executablePath` in index.js). 
+If you don't use [Brave browser](https://brave.com/), remember to change the `executablePath` in index.js to your Chromium browser file path, or directly replace the npm package "puppeteer-core" with "puppeteer" and remove the `executablePath` in index.js:
 
-Awhile after running `node index.js`, all photos will be saved in the "img" folder. (321.9 MB)
+    $ npm i puppeteer
+
+```js
+// index.js
+const puppeteer = require('puppeteer'); // Replace "puppeteer-core" with "puppeteer"
+
+(async () => {
+  const browser = await puppeteer.launch({
+    executablePath: '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser', // Remove this line
+```
+
+Awhile after running `$ node index.js`, all photos will be saved in the "img" folder. (321.9 MB)
 
 [![Photo](https://cdn.dribbble.com/users/3800131/screenshots/15188869/media/823b8d9b8055e21c18408aca4342ae60.png)](https://dribbble.com/raychangdesign)
 
