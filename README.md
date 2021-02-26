@@ -9,12 +9,11 @@ Automatically download 1,178 studio Ghibli's work photos
 
 ### Usage
 
-Install [Git](https://git-scm.com/) and [Node](https://nodejs.org/), then:
+Install [Git](https://git-scm.com/) and [Node](https://nodejs.org/), then type in terminal:
 
     $ git clone https://github.com/rayc2045/ghibli-crawler
     $ cd ghibli-crawler
-    $ npm install
-    $ node index.js
+    $ sh download.sh
 
 If you don't use [Brave browser](https://brave.com/), remember to change the `executablePath` in index.js to your Chromium browser file path, or directly replace the npm package "puppeteer-core" with "puppeteer" and remove the `executablePath` in index.js:
 
