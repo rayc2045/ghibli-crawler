@@ -1,7 +1,5 @@
 # Ghibli Crawler
 
-## Automatically download 1,178 studio Ghibli's work photos
-
 [![Photo](https://cdn.dribbble.com/users/3800131/screenshots/15188916/media/a8f595ba01dd40e9c9fcaf253c09c11f.png)](https://dribbble.com/raychangdesign)
 
 ### Usage
