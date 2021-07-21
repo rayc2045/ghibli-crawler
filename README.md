@@ -1,6 +1,6 @@
 # Ghibli Crawler
 
-[![Photo](https://cdn.dribbble.com/users/3800131/screenshots/15188916/media/a8f595ba01dd40e9c9fcaf253c09c11f.png)](https://dribbble.com/raychangdesign)
+![Photo](https://cdn.dribbble.com/users/3800131/screenshots/15188916/media/a8f595ba01dd40e9c9fcaf253c09c11f.png)
 
 ### Usage
 
