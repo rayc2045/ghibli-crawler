@@ -25,7 +25,7 @@ const puppeteer = require('puppeteer-core'); // Replace "puppeteer-core" with "p
 
 Awhile after running `$ node index.js`, all photos will be saved in the "img" folder. (321.9 MB)
 
-[![Photo](https://cdn.dribbble.com/users/3800131/screenshots/15188869/media/823b8d9b8055e21c18408aca4342ae60.png)](https://dribbble.com/raychangdesign)
+![Photo](https://cdn.dribbble.com/users/3800131/screenshots/15188869/media/823b8d9b8055e21c18408aca4342ae60.png)
 
 ### Dev Log
 
